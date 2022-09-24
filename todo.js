@@ -1,26 +1,30 @@
 const todoList = () => {
-  all = []
+  all = [];
   const add = (todoItem) => {
-    all.push(todoItem)
-  }
+    all.push(todoItem);
+  };
   const markAsComplete = (index) => {
-    all[index].completed = true
-  }
+    all[index].completed = true;
+  };
 
   const overdue = () => {
-    return all.filter((todo) => todo.dueDate < new Date().toLocaleDateString("en-CA"));
-  }
+    return all.filter(
+      (todo) => todo.dueDate < new Date().toLocaleDateString("en-CA")
+    );
+  };
 
   const dueToday = () => {
-    return all.filter((todo) => todo.dueDate == new Date().toLocaleDateString("en-CA") );
-  }
+    return all.filter(
+      (todo) => todo.dueDate == new Date().toLocaleDateString("en-CA")
+    );
+  };
 
   const dueLater = () => {
-   return all.filter((todo) => todo.dueDate > new Date().toLocaleDateString("en-CA"))
-  }
-
-
+    return all.filter(
+      (todo) => todo.dueDate > new Date().toLocaleDateString("en-CA")
+    );
+  };
 
   return { all, add, markAsComplete, overdue, dueToday, dueLater };
 };
-module.exports= todoList;
+module.exports = todoList;
